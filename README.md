@@ -11,52 +11,52 @@
 requirements.txt provided for convenience.
 
 ## Execution
-Execute wiki\_scraper.py in the terminal, using the Python 3 interpreter.
+Execute wiki_scraper.py in the terminal, using the Python 3 interpreter.
 For example, 
 ```
-python3 wiki\_scraper.py
+python3 wiki_scraper.py
 ```
 
 You will be prompted to provide a URL to an English Wikipedia page, e.g.
 ```
-Please enter the URL of the first Wikipedia page: https://en.wikipedia.org/wiki/Python\_(programming\_language)
+Please enter the URL of the first Wikipedia page: https://en.wikipedia.org/wiki/Python_(programming_language)
 ```
 
 ## Output
 The process will complete and then write to standard output, e.g.
 
 ```
-Please enter the URL of the first Wikipedia page: https://en.wikipedia.org/wiki/Python\_(programming\_language)
+Please enter the URL of the first Wikipedia page: https://en.wikipedia.org/wiki/Python_(programming_language)
 
 The process took 27 steps to terminate.
 
 
-Python (programming language) (https://en.wikipedia.org/wiki/Python\_(programming\_language))
-Interpreted language (https://en.wikipedia.org/wiki/Interpreted\_language)
-Programming language (https://en.wikipedia.org/wiki/Programming\_language)
-Formal language (https://en.wikipedia.org/wiki/Formal\_language)
+Python (programming language) (https://en.wikipedia.org/wiki/Python_(programming_language))
+Interpreted language (https://en.wikipedia.org/wiki/Interpreted_language)
+Programming language (https://en.wikipedia.org/wiki/Programming_language)
+Formal language (https://en.wikipedia.org/wiki/Formal_language)
 Mathematics (https://en.wikipedia.org/wiki/Mathematics)
-Ancient Greek (https://en.wikipedia.org/wiki/Ancient\_Greek)
-Greek language (https://en.wikipedia.org/wiki/Greek\_language)
-Modern Greek (https://en.wikipedia.org/wiki/Modern\_Greek)
+Ancient Greek (https://en.wikipedia.org/wiki/Ancient_Greek)
+Greek language (https://en.wikipedia.org/wiki/Greek_language)
+Modern Greek (https://en.wikipedia.org/wiki/Modern_Greek)
 Dialect (https://en.wikipedia.org/wiki/Dialect)
 Latin (https://en.wikipedia.org/wiki/Latin)
-Classical language (https://en.wikipedia.org/wiki/Classical\_language)
+Classical language (https://en.wikipedia.org/wiki/Classical_language)
 Language (https://en.wikipedia.org/wiki/Language)
-Linguistic system (https://en.wikipedia.org/wiki/Linguistic\_system)
-Ferdinand de Saussure (https://en.wikipedia.org/wiki/Ferdinand\_de\_Saussure)
+Linguistic system (https://en.wikipedia.org/wiki/Linguistic_system)
+Ferdinand de Saussure (https://en.wikipedia.org/wiki/Ferdinand_de_Saussure)
 Switzerland (https://en.wikipedia.org/wiki/Switzerland)
-Sovereign state (https://en.wikipedia.org/wiki/Sovereign\_state)
-International law (https://en.wikipedia.org/wiki/International\_law)
+Sovereign state (https://en.wikipedia.org/wiki/Sovereign_state)
+International law (https://en.wikipedia.org/wiki/International_law)
 Nation (https://en.wikipedia.org/wiki/Nation)
 Community (https://en.wikipedia.org/wiki/Community)
-Level of analysis (https://en.wikipedia.org/wiki/Social\_unit)
-Social science (https://en.wikipedia.org/wiki/Social\_science)
-Discipline (academia) (https://en.wikipedia.org/wiki/Discipline\_(academia))
+Level of analysis (https://en.wikipedia.org/wiki/Social_unit)
+Social science (https://en.wikipedia.org/wiki/Social_science)
+Discipline (academia) (https://en.wikipedia.org/wiki/Discipline_(academia))
 Knowledge (https://en.wikipedia.org/wiki/Knowledge)
 Fact (https://en.wikipedia.org/wiki/Fact)
 Reality (https://en.wikipedia.org/wiki/Reality)
-Object of the mind (https://en.wikipedia.org/wiki/Object\_of\_the\_mind)
-Object (philosophy) (https://en.wikipedia.org/wiki/Object\_(philosophy))
+Object of the mind (https://en.wikipedia.org/wiki/Object_of_the_mind)
+Object (philosophy) (https://en.wikipedia.org/wiki/Object_(philosophy))
 Philosophy (https://en.wikipedia.org/wiki/Philosophy)
 ```
