@@ -14,7 +14,7 @@ requirements.txt provided for convenience.
 Execute wiki\_scraper.py in the terminal, using the Python 3 interpreter.
 For example, 
 ```
-python3 wiki\_scraper.py'
+python3 wiki\_scraper.py
 ```
 
 You will be prompted to provide a URL to an English Wikipedia page, e.g.
