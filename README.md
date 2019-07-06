@@ -1,4 +1,11 @@
 # Wiki Scraper
+## Purpose
+This program tests the hypothesis that the Philosophy page on Wikipedia is reachable from any other Wikipedia page,
+simply by clicking the first link in each article that points to another Wikipedia page.
+
+The program finds the first qualifying link on each page, starting from a given article, and recursively
+iterates until reaching the Philosophy page or finding a loop in the graph.
+
 ## Requirements
 * beautifulsoup4==4.7.1
 * certifi==2019.6.16
