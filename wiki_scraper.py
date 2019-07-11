@@ -2,6 +2,8 @@
 """Scrapes an arbitrary Wikipedia page, recursively follows first link.
 
 Ceases execution upon reaching the "Philosophy" entry."""
+import argparse
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -64,7 +66,10 @@ def philospider(url, title_list=None, url_list=None, steps=0):
                            steps + 1)
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser()
+    # TODO Add arguments
+    #parser.add_argument('url', type=str, nargs=1
     successful = False
 
     first_url = input("Please enter the URL of the first Wikipedia page: ")
