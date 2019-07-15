@@ -69,7 +69,18 @@ def philospider(url, title_list=None, url_list=None, steps=0):
 def main(argv=None):
     parser = argparse.ArgumentParser()
     # TODO Add arguments
-    #parser.add_argument('url', type=str, nargs=1
+    parser.add_argument('--url',
+                        type=str,
+                        nargs=1,
+                        help="Wikipedia page to begin the process",
+                        default=('https://en.wikipedia.org/'
+                                 'wiki/Special:Randompage'))
+    parser.add_argument('--n',
+                        type=int,
+                        nargs=1,
+                        help="Number of random pages to process",
+                        default=1)
+
     successful = False
 
     first_url = input("Please enter the URL of the first Wikipedia page: ")
