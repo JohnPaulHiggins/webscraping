@@ -68,36 +68,45 @@ def philospider(url, title_list=None, url_list=None, steps=0):
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
+    group = parser.add_mutually_exclusive_group()
     # TODO Add arguments
-    parser.add_argument('--url',
-                        type=str,
-                        nargs=1,
-                        help="Wikipedia page to begin the process",
-                        default=('https://en.wikipedia.org/'
-                                 'wiki/Special:Randompage'))
-    parser.add_argument('--n',
-                        type=int,
-                        nargs=1,
-                        help="Number of random pages to process",
-                        default=1)
+    group.add_argument('-u',
+                       '--url_first',
+                       type=str,
+                       nargs=1,
+                       help="Wikipedia page to begin the process",
+                       required=False,
+                       default=('https://en.wikipedia.org/'
+                                'wiki/Special:Randompage'))
+    group.add_argument('-n',
+                       '--num_queries',
+                       type=int,
+                       nargs=1,
+                       help="Number of random pages to process",
+                       required=False,
+                       default=1)
 
-    successful = False
+    args = parser.parse_args()
 
-    first_url = input("Please enter the URL of the first Wikipedia page: ")
+    if args.url:
+        successful = False
 
-    last_url, titles, urls, num_steps = philospider(first_url)
+        last_url, titles, urls, num_steps = philospider(args.url)
 
-    if titles[-1] == 'Philosophy - Wikipedia':
-        successful = True
+        if titles[-1] == 'Philosophy - Wikipedia':
+            successful = True
 
-    print("\nThe process took",
-          str(num_steps),
-          "steps to terminate.\n\n")
+        print("\nThe process took",
+              str(num_steps),
+              "steps to terminate.\n\n")
 
-    titles_urls = zip(titles, urls)
+        titles_urls = zip(titles, urls)
 
-    for title, url in titles_urls:
-        print(title.split('-')[0].strip() + " (" + url + ")")
+        for title, url in titles_urls:
+            print(title.split('-')[0].strip() + " (" + url + ")")
+
+    else if args.num_queries:
+
 
 
 if __name__ == '__main__':
