@@ -69,9 +69,8 @@ def philospider(url, title_list=None, url_list=None, steps=0):
 def main(argv=None):
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group()
-    # TODO Add arguments
     group.add_argument('-u',
-                       '--url_first',
+                       '--url',
                        type=str,
                        nargs=1,
                        help="Wikipedia page to begin the process",
@@ -88,10 +87,30 @@ def main(argv=None):
 
     args = parser.parse_args()
 
-    if args.url:
+    if args.num_queries:
+        successes = []
+        steps = []
+
+        for i in range(num_queries):
+            (last_url,
+             titles,
+             urls,
+             num_steps) = philospider('https://en.wikipedia.org/'
+                                      'wiki/Special:Randompage')
+
+            if titles[-1] == 'Philosophy - Wikipedia':
+                successes = successes + [True]
+            else:
+                successes = successes + [False]
+
+            steps = steps + [num_steps]
+
+        return (successes, steps)
+
+    elif args.url:
         successful = False
 
-        last_url, titles, urls, num_steps = philospider(args.url)
+        last_url, titles, urls, num_steps = philospider(args.url[0])
 
         if titles[-1] == 'Philosophy - Wikipedia':
             successful = True
@@ -104,9 +123,6 @@ def main(argv=None):
 
         for title, url in titles_urls:
             print(title.split('-')[0].strip() + " (" + url + ")")
-
-    else if args.num_queries:
-
 
 
 if __name__ == '__main__':
