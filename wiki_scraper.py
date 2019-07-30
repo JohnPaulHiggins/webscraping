@@ -74,16 +74,13 @@ def main(argv=None):
                        type=str,
                        nargs=1,
                        help="Wikipedia page to begin the process",
-                       required=False,
-                       default=('https://en.wikipedia.org/'
-                                'wiki/Special:Randompage'))
+                       required=False)
     group.add_argument('-n',
                        '--num_queries',
                        type=int,
                        nargs=1,
                        help="Number of random pages to process",
-                       required=False,
-                       default=1)
+                       required=False)
 
     args = parser.parse_args()
 
@@ -91,7 +88,7 @@ def main(argv=None):
         successes = []
         steps = []
 
-        for i in range(num_queries):
+        for i in range(args.num_queries[0]):
             (last_url,
              titles,
              urls,
@@ -105,12 +102,36 @@ def main(argv=None):
 
             steps = steps + [num_steps]
 
+        print(successes)
+        print(steps)
         return (successes, steps)
 
     elif args.url:
         successful = False
 
         last_url, titles, urls, num_steps = philospider(args.url[0])
+
+        if titles[-1] == 'Philosophy - Wikipedia':
+            successful = True
+
+        print("\nThe process took",
+              str(num_steps),
+              "steps to terminate.\n\n")
+
+        titles_urls = zip(titles, urls)
+
+        for title, url in titles_urls:
+            print(title.split('-')[0].strip() + " (" + url + ")")
+
+    else:
+        print("url: " + str(args.url))
+        successful = False
+
+        (last_url,
+         titles,
+         urls,
+         num_steps) = philospider('https://en.wikipedia.org/'
+                                  'wiki/Special:Randompage')
 
         if titles[-1] == 'Philosophy - Wikipedia':
             successful = True
